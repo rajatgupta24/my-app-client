@@ -1,0 +1,61 @@
+.wrapper{
+    padding: 1rem 2rem;
+    width: 100%;
+    background: #23242E;
+    color: #E3E3E6;
+}
+
+.cardContainer {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainContainer{
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.plan{
+    width: 66%;
+}
+
+.landingTable{
+    padding: 0;
+}
+
+.countryReport{
+    width: 33%;
+}
+
+.cardItem{
+    margin-bottom: .75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cardItemImage{
+    width: 2.25rem;
+}
+
+.cardItemInfo{
+    width: 80%;
+    margin-left: .5rem;
+}
+
+.cardItemRemark{
+    width: 20%;
+}
+
+.reportContainer{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.reportContainerItem{
+    width: 33%;
+}

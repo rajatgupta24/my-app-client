@@ -1,0 +1,43 @@
+.wrapper {
+    padding: 1rem;
+    height: 100vh;
+    background: #2D2F38;
+    color: #E3E3E6;
+}
+
+.logoContainer{
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.logo{
+    margin-right: .5rem;
+}
+
+.linkList{
+    padding: 2rem 0;
+}
+
+.link{
+    margin-bottom: .5rem;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: baseline;
+    font-size: 1.125rem;
+    color: #E3E3E6;
+    /* border: 1px solid #fff; */
+    border-radius: .25rem;
+}
+
+.link:hover{
+    background: #23242D;
+    color: #E3E3E6;
+    box-shadow: 0px 0px 5px #111;
+}
+
+.linkName{
+    margin-left: .5rem;
+}
