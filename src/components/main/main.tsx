@@ -95,16 +95,19 @@ const Main = () => {
       title: "Name",
       dataIndex: "name",
       key: "name",
+      render: (value: string) => <p>{value}</p>,
     },
     {
       title: "Age",
       dataIndex: "age",
       key: "age",
+      render: (value: string) => <p>${value}</p>,
     },
     {
       title: "Address",
       dataIndex: "address",
       key: "address",
+      render: (value: string) => <p>${value}</p>,
     },
   ];
 
