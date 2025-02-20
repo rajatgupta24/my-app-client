@@ -17,7 +17,12 @@ interface MainTableProps {
 
 const MainTable = (props: MainTableProps) => {
   return (
-    <Table pagination={false} dataSource={props.data} columns={props.columns} />
+    <Table
+      pagination={false}
+      dataSource={props.data}
+      columns={props.columns}
+      scroll={{ y: "47vh" }}
+    />
   );
 };
 

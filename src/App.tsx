@@ -1,45 +1,30 @@
-import "./App.css";
-
-import { Layout } from "antd";
-
-const { Header, Footer, Sider, Content } = Layout;
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Reporting from "./components/reporting/reporting";
-import Sidebar from "./components/sidebar/sidebar";
 import Main from "./components/main/main";
-import AppHeader from "./components/header/header";
+import Login from "./components/auth/login/login";
+import MainLayout from "./components/layout/layout";
+import Signup from "./components/auth/signup/signup";
+import Reporting from "./components/reporting/reporting";
+import ForgotPassword from "./components/auth/forgotPassword/forgotPassword";
 
-const headerStyle: React.CSSProperties = {
-  height: "4.125rem",
-  borderBottom: "1px dashed #6c6c6e",
-};
+import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const MainWithLayout = MainLayout(Main);
+  const ReportingWithLayout = MainLayout(Reporting);
 
   return (
     <>
       <Router>
-        <Layout>
-          <Sider width="15%">
-            <Sidebar />
-          </Sider>
-          <Layout>
-            <Header style={headerStyle}>
-              <AppHeader />
-            </Header>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/reporting" element={<Reporting />} />
-              {/* <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} /> */}
-            </Routes>
+        <Routes>
+          <Route path="/" element={<MainWithLayout />} />
+          <Route path="/reporting" element={<ReportingWithLayout />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
-            {/* <Footer>Footer</Footer> */}
-          </Layout>
-        </Layout>
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
       </Router>
     </>
   );

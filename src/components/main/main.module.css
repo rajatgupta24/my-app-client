@@ -1,19 +1,20 @@
 .wrapper{
-    padding: 1rem 2rem;
+    max-height: calc(100vh - 4.125rem);
+    height: calc(100vh - 4.125rem);
+    padding: 2rem 3rem 0 3rem;
     width: 100%;
     background: #23242E;
     color: #E3E3E6;
 }
 
 .cardContainer {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .mainContainer{
-    margin-bottom: 1rem;
     width: 100%;
     display: flex;
     gap: 1rem;
@@ -29,6 +30,13 @@
 
 .countryReport{
     width: 33%;
+    overflow-y: auto;
+}
+
+.innerCard{
+    padding: 1rem 0 0 1rem;
+    height: 53vh;
+    overflow-y: auto;
 }
 
 .cardItem{

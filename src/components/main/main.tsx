@@ -1,15 +1,11 @@
-import React from "react";
-
 import { Card } from "antd";
-import { Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import type { TableProps } from "antd";
 
-import styles from "./main.module.css";
 import MainTable from "../../shared/table/table";
+import SmallCard from "../../shared/smallCard/smallCard";
 import ChartCard from "../../shared/chart-card/chartCard";
 
-import type { TableProps } from "antd";
-import SmallCard from "../../shared/smallCard/smallCard";
+import styles from "./main.module.css";
 
 interface DataType {
   key: string;
@@ -68,6 +64,30 @@ const Main = () => {
       age: 42,
       address: "10 Downing Street",
     },
+    {
+      key: "9",
+      name: "Mike",
+      age: 32,
+      address: "10 Downing Street",
+    },
+    {
+      key: "10",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+    },
+    {
+      key: "11",
+      name: "Mike",
+      age: 32,
+      address: "10 Downing Street",
+    },
+    {
+      key: "12",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+    },
   ];
 
   const columns: TableProps<DataType>["columns"] = [
@@ -105,10 +125,13 @@ const Main = () => {
 
         <div className={styles.countryReport}>
           <Card title="Transactions">
-            
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((_: number, key: number) => (
-              <SmallCard key={key} />
-            ))}
+            <Card type="inner" className={styles.innerCard}>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
+                (_: number, key: number) => (
+                  <SmallCard key={key} />
+                )
+              )}
+            </Card>
           </Card>
         </div>
       </div>
