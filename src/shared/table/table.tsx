@@ -3,6 +3,8 @@ import { Table } from "antd";
 
 import type { TableProps } from "antd";
 
+import styles from "./table.module.css";
+
 interface DataType {
   key: string;
   name: string;
@@ -18,10 +20,12 @@ interface MainTableProps {
 const MainTable = (props: MainTableProps) => {
   return (
     <Table
-      pagination={false}
+      className={styles.table}
+      size="middle"
       dataSource={props.data}
       columns={props.columns}
-      scroll={{ y: "47vh" }}
+      pagination={false}
+      scroll={{ y: "46vh" }}
     />
   );
 };
