@@ -9,6 +9,7 @@ import MainTable from "../../shared/table/table";
 import ChartCard from "../../shared/chart-card/chartCard";
 
 import type { TableProps } from "antd";
+import SmallCard from "../../shared/smallCard/smallCard";
 
 interface DataType {
   key: string;
@@ -32,37 +33,37 @@ const Main = () => {
       address: "10 Downing Street",
     },
     {
-      key: "1",
+      key: "3",
       name: "Mike",
       age: 32,
       address: "10 Downing Street",
     },
     {
-      key: "2",
+      key: "4",
       name: "John",
       age: 42,
       address: "10 Downing Street",
     },
     {
-      key: "1",
+      key: "5",
       name: "Mike",
       age: 32,
       address: "10 Downing Street",
     },
     {
-      key: "2",
+      key: "6",
       name: "John",
       age: 42,
       address: "10 Downing Street",
     },
     {
-      key: "1",
+      key: "7",
       name: "Mike",
       age: 32,
       address: "10 Downing Street",
     },
     {
-      key: "2",
+      key: "8",
       name: "John",
       age: 42,
       address: "10 Downing Street",
@@ -89,8 +90,8 @@ const Main = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.cardContainer}>
-        {[1].map((item: number, key: number) => (
+      <div className={`${styles.cardContainer} landing-card-container`}>
+        {[1, 2, 3, 4].map((item: number, key: number) => (
           <ChartCard name={item} key={key} />
         ))}
       </div>
@@ -104,20 +105,9 @@ const Main = () => {
 
         <div className={styles.countryReport}>
           <Card title="Transactions">
+            
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((_: number, key: number) => (
-              <div className={styles.cardItem} key={key}>
-                <Avatar
-                  className={styles.cardItemImage}
-                  icon={<UserOutlined />}
-                />
-                <div className={styles.cardItemInfo}>
-                  <p>Name</p>
-                  <p>Location</p>
-                </div>
-                <div className={styles.cardItemRemark}>
-                  <p>$500</p>
-                </div>
-              </div>
+              <SmallCard key={key} />
             ))}
           </Card>
         </div>

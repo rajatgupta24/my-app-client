@@ -9,6 +9,7 @@
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 .mainContainer{
@@ -19,7 +20,7 @@
 }
 
 .plan{
-    width: 66%;
+    width: 67%;
 }
 
 .landingTable{

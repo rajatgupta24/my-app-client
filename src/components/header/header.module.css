@@ -1,0 +1,42 @@
+.wrapper{
+    padding: 1rem 2rem;
+    background: #23242E;
+    color: #E3E3E6;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar {
+    width: 40%;
+    background: transparent !important;
+    color: #E3E3E6;
+    border: 1px dashed #6c6c6e !important;
+}
+
+.searchBar:hover, .searchBar:focus, .searchBar:active{
+    background: transparent !important;
+    border: 1px dashed #6c6c6e !important;
+}
+
+.searchBar::placeholder {
+    color: #E3E3E6;
+}
+
+.right {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cardItemImage{
+    margin-left: 1rem;
+    width: 2.25rem;
+}

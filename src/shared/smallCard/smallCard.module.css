@@ -1,0 +1,19 @@
+.cardItem{
+    margin-bottom: .75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cardItemImage{
+    width: 2.25rem;
+}
+
+.cardItemInfo{
+    width: 80%;
+    margin-left: .5rem;
+}
+
+.cardItemRemark{
+    width: 20%;
+}

@@ -1,99 +1,84 @@
 import React from "react";
 import { Card } from "antd";
+import * as echarts from "echarts";
 
-import { AreaChart, Area, ResponsiveContainer } from "recharts";
+import styles from "./chartCard.module.css";
+import SmallCard from "../smallCard/smallCard";
 
 interface ChartCardProps {
   name: number;
 }
 
 const ChartCard = (props: ChartCardProps) => {
-  console.log(props);
+  let myChart = null;
 
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+  setTimeout(() => {
+    myChart = echarts.init(document.getElementById(`chart-${props.name}`));
+
+    myChart?.setOption({
+      tooltip: {},
+      grid: {
+        left: "0%",
+        right: "0%",
+        bottom: "0%",
+        borderRadius: "8px",
+      },
+      xAxis: [
+        {
+          show: false,
+          type: "category",
+          boundaryGap: false,
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        },
+      ],
+      yAxis: [
+        {
+          show: false,
+          type: "value",
+        },
+      ],
+      series: [
+        {
+          name: "Line 1",
+          type: "line",
+          stack: "Total",
+          smooth: true,
+          lineStyle: {
+            width: 0,
+          },
+          showSymbol: false,
+          areaStyle: {
+            opacity: 0.8,
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: "rgb(128, 255, 165)",
+              },
+              {
+                offset: 1,
+                color: "rgb(1, 191, 236)",
+              },
+            ]),
+          },
+          emphasis: {
+            focus: "series",
+          },
+          data: [140, 232, 101, 264, 90, 340, 250],
+        },
+      ],
+    });
+  }, 500);
 
   return (
     <>
-      <Card style={{ width: "33%", height: "100rem" }}>
-        <p>Card content</p>
-
-        <ResponsiveContainer width="10rem" height="10rem">
-          <AreaChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <Area
-              type="monotone"
-              dataKey="uv"
-              stroke="#8884d8"
-              fill="#8884d8"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-
-        <AreaChart
-          width={350}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-        </AreaChart>
+      <Card style={{ width: "33%" }}>
+        <div className={styles.card}>
+          <SmallCard />
+        </div>
+        <div
+          id={`chart-${props.name}`}
+          style={{ width: "100%", height: "10rem" }}
+        ></div>
       </Card>
     </>
   );
