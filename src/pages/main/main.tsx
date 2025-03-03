@@ -3,7 +3,7 @@ import type { TableProps } from "antd";
 
 import MainTable from "../../shared/table/table";
 import SmallCard from "../../shared/smallCard/smallCard";
-import ChartCard from "../../shared/chart-card/chartCard";
+import ChartCard from "../../shared/chartCard/chartCard";
 
 import styles from "./main.module.css";
 

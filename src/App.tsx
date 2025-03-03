@@ -1,17 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Main from "./components/main/main";
-import Login from "./components/auth/login/login";
-import MainLayout from "./components/layout/layout";
-import Signup from "./components/auth/signup/signup";
-import Reporting from "./components/reporting/reporting";
-import ForgotPassword from "./components/auth/forgotPassword/forgotPassword";
+import Login from "./pages/auth/login/login";
+import Signup from "./pages/auth/signup/signup";
+import ForgotPassword from "./pages/auth/forgotPassword/forgotPassword";
+
+import Main from "./pages/main/main";
+import Reporting from "./pages/reporting/reporting";
+
+import PublicLayout from "./components/layouts/publicLayout";
+import PrivateLayout from "./components/layouts/privateLayout";
+
+import LoginIcon from "./assets/login.svg";
+import SignupIcon from "./assets/signup.svg";
 
 import "./App.css";
 
 function App() {
-  const MainWithLayout = MainLayout(Main);
-  const ReportingWithLayout = MainLayout(Reporting);
+  const LoginPage = PublicLayout(Login, LoginIcon);
+  const SignupPage = PublicLayout(Signup, SignupIcon);
+  const ForgotPasswordPage = PublicLayout(ForgotPassword, LoginIcon);
+
+  const MainWithLayout = PrivateLayout(Main);
+  const ReportingWithLayout = PrivateLayout(Reporting);
 
   return (
     <>
@@ -19,9 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainWithLayout />} />
           <Route path="/reporting" element={<ReportingWithLayout />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>

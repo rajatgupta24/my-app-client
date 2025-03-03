@@ -1,0 +1,13 @@
+.btn {
+    margin: 1rem 0;
+    padding: .5rem 1rem;   
+    font-weight: 700;
+    background: #33CDED;
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    opacity: .25;
+}

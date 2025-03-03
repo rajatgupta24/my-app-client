@@ -4,7 +4,7 @@ import { Layout } from "antd";
 import AppHeader from "../header/header";
 import Sidebar from "../sidebar/sidebar";
 
-const MainLayout = <T extends object>(
+const PrivateLayout = <T extends object>(
   WrappedComponent: React.ComponentType<T>
 ) => {
   const { Header, Sider } = Layout;
@@ -31,4 +31,4 @@ const MainLayout = <T extends object>(
   );
 };
 
-export default MainLayout;
+export default PrivateLayout;
