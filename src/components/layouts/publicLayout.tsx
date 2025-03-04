@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 import { Layout } from "antd";
 
-import logo from "../../assets/login.svg";
+// import logo from "../../assets/login.svg";
 
 const PublicLayout = <T extends object>(
   AuthPage: React.ComponentType<T>,

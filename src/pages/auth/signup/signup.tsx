@@ -35,7 +35,7 @@ const Signup = () => {
       email: email,
       password: password,
     }).then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       navigate("/login");
     });
   };
