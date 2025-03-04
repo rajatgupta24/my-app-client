@@ -3,37 +3,35 @@ import React, { useEffect, useState } from "react";
 import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from "./forgotPassword.module.css";
+import styles from "./resetPassword.module.css";
 import SubmitBtn from "../../../shared/submitBtn/submitBtn";
 import ApiUtil from "../../../utils/axios";
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
+const ResetPassword = () => {
+  const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(true);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (email === "") {
+    if (password === "") {
       setDisabled(true);
     } else {
       setDisabled(false);
     }
-  }, [email]);
+  }, [password]);
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
-    if (email === "") return;
+    if (password === "") return;
 
-    ApiUtil.post("api/auth/forgot-password", {
-      email: email,
+    ApiUtil.post("api/auth/reset-password", {
+      newPassword: password,
+      token: localStorage.getItem("resetToken"),
     }).then((res) => {
       // console.log(res.data);
-
-      localStorage.setItem("resetToken", res.data.message);
-
-      navigate("/reset-password");
+      navigate("/login");
     });
   };
 
@@ -42,18 +40,16 @@ const ForgotPassword = () => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <h1 className={styles.heading}>Welcome to My App!</h1>
-          <p className={styles.subHeader}>
-            Please enter your registered email.
-          </p>
+          <p className={styles.subHeader}>Please select a new password.</p>
         </div>
 
         <form>
           <div className={styles.formField}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="password">New Password</label>
             <Input
-              placeholder="Please enter your email here..."
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Please enter your new password here..."
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
@@ -68,4 +64,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;
