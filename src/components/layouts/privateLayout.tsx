@@ -11,6 +11,7 @@ const PrivateLayout = <T extends object>(
 
   const headerStyle: React.CSSProperties = {
     height: "4.125rem",
+    padding: "0",
     borderBottom: "1px dashed #6c6c6e",
   };
 

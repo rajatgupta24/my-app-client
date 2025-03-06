@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 *{
+    margin: 0;
+    padding: 0;
     font-family: "Comfortaa", serif;
     box-sizing: border-box;
+}
+
+.ant-card-body {
+    padding: 0 !important;
+}
+
+canvas {
+    border-radius: .5rem;
 }
