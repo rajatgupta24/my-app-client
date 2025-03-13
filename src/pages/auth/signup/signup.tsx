@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ApiUtil from "../../../utils/axios";
 import SubmitBtn from "../../../components/submitBtn/submitBtn";
 
-import styles from "./signup.module.css";
+import styles from "./signup.module.scss";
 
 const Signup = () => {
   const [disabled, setDisabled] = useState(true);

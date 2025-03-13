@@ -19,19 +19,19 @@ const Sidebar = () => {
         <li>
           <Link className={styles.link} to="/">
             <HomeOutlined />
-            <p className={styles.linkName}>Planner</p>
+            <p className={styles.linkName}>Home</p>
           </Link>
         </li>
         <li>
           <Link className={styles.link} to="/catalog">
             <DatabaseOutlined />
-            <p className={styles.linkName}>Catalog</p>
+            <p className={styles.linkName}>Transactions</p>
           </Link>
         </li>
         <li>
           <Link className={styles.link} to="/reporting">
             <PieChartOutlined />
-            <p className={styles.linkName}>Reporting</p>
+            <p className={styles.linkName}>Analysis</p>
           </Link>
         </li>
       </ul>

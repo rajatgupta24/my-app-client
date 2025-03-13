@@ -1,7 +1,4 @@
-// import React from "react";
 import { Layout } from "antd";
-
-// import logo from "../../assets/login.svg";
 
 const PublicLayout = <T extends object>(
   AuthPage: React.ComponentType<T>,
@@ -15,7 +12,7 @@ const PublicLayout = <T extends object>(
   };
 
   const siderStyle: React.CSSProperties = {
-    padding: "20vh",
+    padding: "20vh 0",
     height: "100%",
     display: "flex",
     justifyContent: "center",
@@ -23,7 +20,7 @@ const PublicLayout = <T extends object>(
   };
 
   const iconStyle: React.CSSProperties = {
-    height: "32rem",
+    width: "90%",
   };
 
   return (props: T) => (

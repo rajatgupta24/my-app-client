@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from "./forgotPassword.module.css";
+import styles from "./forgotPassword.module.scss";
 import SubmitBtn from "../../../components/submitBtn/submitBtn";
 import ApiUtil from "../../../utils/axios";
 
@@ -29,10 +29,7 @@ const ForgotPassword = () => {
     ApiUtil.post("api/auth/forgot-password", {
       email: email,
     }).then((res) => {
-      // console.log(res.data);
-
-      localStorage.setItem("resetToken", res.data.message);
-
+      sessionStorage.setItem("resetToken", res.data.message);
       navigate("/reset-password");
     });
   };

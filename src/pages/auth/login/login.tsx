@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-
 import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
 import ApiUtil from "../../../utils/axios";
+import { useAuth } from "../../../hooks/useAuth";
 import SubmitBtn from "../../../components/submitBtn/submitBtn";
 
-import styles from "./login.module.css";
+import styles from "./login.module.scss";
 
 const Login = () => {
-  const [disabled, setDisabled] = useState(true);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [disabled, setDisabled] = useState(true);
 
   const navigate = useNavigate();
+  const { token } = useAuth();
+
+  useEffect(() => {
+    if (token) {
+      navigate("/", { replace: true }); // Redirect to home page
+    }
+  }, [token, navigate]);
 
   useEffect(() => {
     if (email === "" || password === "") {
@@ -33,7 +39,8 @@ const Login = () => {
       email: email,
       password: password,
     }).then((res) => {
-      console.log(res.data);
+      console.log(res);
+      sessionStorage.setItem("authToken", res.data.token);
       navigate("/");
     });
   };

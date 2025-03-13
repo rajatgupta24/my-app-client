@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from "./resetPassword.module.css";
+import styles from "./resetPassword.module.scss";
 import SubmitBtn from "../../../components/submitBtn/submitBtn";
 import ApiUtil from "../../../utils/axios";
 
@@ -28,9 +28,10 @@ const ResetPassword = () => {
 
     ApiUtil.post("api/auth/reset-password", {
       newPassword: password,
-      token: localStorage.getItem("resetToken"),
+      token: sessionStorage.getItem("resetToken"),
     }).then((res) => {
       console.log(res.data);
+      sessionStorage.removeItem("resetToken");
       navigate("/login");
     });
   };

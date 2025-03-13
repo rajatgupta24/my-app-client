@@ -6,8 +6,11 @@
     color: #fff;
     border-radius: .5rem;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .btn:disabled {
     opacity: .25;
+    pointer-events: none;
 }

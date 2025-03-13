@@ -1,11 +1,10 @@
 import { Card } from "antd";
 import type { TableProps } from "antd";
 
+import ChartCard from "../../components/chartCard/chartCard";
 import MainTable from "../../components/table/table";
 import SmallCard from "../../components/smallCard/smallCard";
-import ChartCard from "../../components/chartCard/chartCard";
-
-import styles from "./main.module.css";
+import styles from "./home.module.scss";
 
 interface DataType {
   key: string;
@@ -14,7 +13,7 @@ interface DataType {
   address: string;
 }
 
-const Main = () => {
+const Home = () => {
   const data: DataType[] = [
     {
       key: "1",
@@ -142,4 +141,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

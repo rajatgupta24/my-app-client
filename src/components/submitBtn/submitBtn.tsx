@@ -1,5 +1,4 @@
-// import React from "react";
-import styles from "./submitBtn.module.css";
+import styles from "./submitBtn.module.scss";
 
 interface SubmitBtnProps {
   onclick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

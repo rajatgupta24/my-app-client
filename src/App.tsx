@@ -1,20 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/authContext";
 
+import Home from "./pages/home/home";
 import Login from "./pages/auth/login/login";
 import Signup from "./pages/auth/signup/signup";
-import ForgotPassword from "./pages/auth/forgotPassword/forgotPassword";
+import PublicLayout from "./layouts/publicLayout/publicLayout";
+import PrivateRoute from "./components/privateRoute/privateRoute";
 import ResetPassword from "./pages/auth/resetPassword/resetPassword";
-
-import Main from "./pages/main/main";
-import Reporting from "./pages/reporting/reporting";
-
-import PublicLayout from "./components/layouts/publicLayout";
-import PrivateLayout from "./components/layouts/privateLayout";
+import ForgotPassword from "./pages/auth/forgotPassword/forgotPassword";
 
 import LoginIcon from "./assets/login.svg";
 import SignupIcon from "./assets/signup.svg";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const LoginPage = PublicLayout(Login, LoginIcon);
@@ -22,24 +20,21 @@ function App() {
   const ForgotPasswordPage = PublicLayout(ForgotPassword, LoginIcon);
   const ResetPasswordPage = PublicLayout(ResetPassword, LoginIcon);
 
-  const MainWithLayout = PrivateLayout(Main);
-  const ReportingWithLayout = PrivateLayout(Reporting);
-
   return (
-    <>
+    <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<MainWithLayout />} />
-          <Route path="/reporting" element={<ReportingWithLayout />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
 
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/" element={<Home />} />
+          </Route>
         </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }
 
