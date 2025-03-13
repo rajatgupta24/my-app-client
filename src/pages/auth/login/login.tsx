@@ -4,7 +4,7 @@ import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
 import ApiUtil from "../../../utils/axios";
-import SubmitBtn from "../../../shared/submitBtn/submitBtn";
+import SubmitBtn from "../../../components/submitBtn/submitBtn";
 
 import styles from "./login.module.css";
 

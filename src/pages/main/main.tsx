@@ -1,9 +1,9 @@
 import { Card } from "antd";
 import type { TableProps } from "antd";
 
-import MainTable from "../../shared/table/table";
-import SmallCard from "../../shared/smallCard/smallCard";
-import ChartCard from "../../shared/chartCard/chartCard";
+import MainTable from "../../components/table/table";
+import SmallCard from "../../components/smallCard/smallCard";
+import ChartCard from "../../components/chartCard/chartCard";
 
 import styles from "./main.module.css";
 
@@ -138,32 +138,6 @@ const Main = () => {
           </Card>
         </div>
       </div>
-
-      {/* <div className={styles.reportContainer}>
-        {[1, 2, 3].map((_: number, key: number) => (
-          <Card
-            title="Transactions"
-            className={styles.reportContainerItem}
-            key={key}
-          >
-            {[1, 2, 3, 4].map((_: number, key: number) => (
-              <div className={styles.cardItem} key={key}>
-                <Avatar
-                  className={styles.cardItemImage}
-                  icon={<UserOutlined />}
-                />
-                <div className={styles.cardItemInfo}>
-                  <p>Name</p>
-                  <p>Location</p>
-                </div>
-                <div className={styles.cardItemRemark}>
-                  <p>$500</p>
-                </div>
-              </div>
-            ))}
-          </Card>
-        ))}
-      </div> */}
     </div>
   );
 };

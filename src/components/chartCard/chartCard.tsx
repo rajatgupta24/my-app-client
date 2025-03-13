@@ -71,7 +71,7 @@ const ChartCard = (props: ChartCardProps) => {
 
   return (
     <>
-      <Card style={{ padding: "0", width: "33%" }}>
+      <Card variant="borderless" style={{ padding: "0", width: "33%" }}>
         <div className={styles.card}>
           <SmallCard />
         </div>

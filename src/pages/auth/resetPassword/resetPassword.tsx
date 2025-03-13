@@ -4,7 +4,7 @@ import { Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./resetPassword.module.css";
-import SubmitBtn from "../../../shared/submitBtn/submitBtn";
+import SubmitBtn from "../../../components/submitBtn/submitBtn";
 import ApiUtil from "../../../utils/axios";
 
 const ResetPassword = () => {
